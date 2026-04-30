@@ -1,0 +1,116 @@
+:root {
+    --bg-main: #79b0fd;      /* Bright Pink */
+    --card-white: #ffffff;
+    --btn-yellow: #ffeaa7;
+    --btn-orange: #fab1a0;
+    --btn-red: #6e6bd5;
+    --font: 'Fredoka', sans-serif;
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    background-color: var(--bg-main);
+    font-family: var(--font);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+.menu-card {
+    background: var(--card-white);
+    width: 95%;
+    max-width: 900px;
+    height: 85vh;
+    border-radius: 40px;
+    border: 6px solid #2d3436;
+    padding: 30px;
+    display: flex;
+    flex-direction: column;
+    box-shadow: 15px 15px 0px rgba(0,0,0,0.1);
+}
+
+.top-nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.back-btn {
+    background: #f1f2f6;
+    border: 3px solid #2d3436;
+    padding: 10px 20px;
+    border-radius: 15px;
+    font-weight: 700;
+    cursor: pointer;
+    font-family: var(--font);
+}
+
+
+
+.hidden-settings {
+    width: 40px;
+    height: 40px;
+    background: transparent;
+    border: none;
+}
+
+.grid-container {
+    flex-grow: 1;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    gap: 20px;
+}
+
+.card-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+}
+
+/* Image Container replaces the Upload Box */
+.image-container {
+    width: 220px;
+    height: 350px;
+    background: #dfe6e9;
+    border: 4px solid #2d3436;
+    border-radius: 25px;
+    overflow: hidden; /* Clips the image to the rounded corners */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.level-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* This makes the image fill the box without squishing */
+}
+
+.label-btn {
+    width: 200px;
+    padding: 12px;
+    border: 4px solid #2d3436;
+    border-radius: 15px;
+    font-size: 1.2rem;
+    font-weight: 700;
+    box-shadow: 0 5px 0 #2d3436;
+    cursor: pointer;
+    font-family: var(--font);
+}
+
+.yellow { background-color: var(--btn-yellow); }
+.orange { background-color: var(--btn-orange); }
+.red { background-color: var(--btn-red); color: white; }
+
+.label-btn:active {
+    transform: translateY(3px);
+    box-shadow: 0 2px 0 #2d3436;
+}

@@ -1,0 +1,172 @@
+/* Color Palette & Font Setup */
+:root {
+    --bg-page: #ff9f43;       /* Bright Orange Page Background */
+    --font-logo: 'Montserrat', sans-serif;
+    --font-body: 'Quicksand', sans-serif;
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    background-color: var(--bg-page);
+    font-family: var(--font-body);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+/* The Game Card Board */
+.menu-board {
+    background: #ffffff;
+    width: 90%;
+    max-width: 950px;
+    height: 100vh;
+    padding: 30px 40px;
+    border-radius: 40px;
+    border: 8px solid #2d3436; /* Chunky black border */
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    box-shadow: 15px 15px 0px rgba(0,0,0,0.1);
+}
+
+/* Top Navigation Styles */
+.top-nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.no-underline { text-decoration: none; }
+
+.nav-btn {
+    background: white;
+    border: 3px solid #2d3436;
+    border-radius: 15px;
+    padding: 10px 20px;
+    font-weight: bold;
+    font-size: 1.1rem;
+    cursor: pointer;
+    font-family: var(--font-body);
+    transition: transform 0.1s;
+}
+
+.nav-btn:hover {
+    transform: translateY(-2px);
+    background-color: #f1f1f1;
+}
+
+.right-controls { display: flex; align-items: center; gap: 15px; }
+
+/* Hidden Settings Button */
+.hidden-settings {
+    width: 45px;
+    height: 45px;
+    background: transparent;
+    border: none;
+    border-radius: 50%;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.hidden-settings:hover { background: rgba(0,0,0,0.03); }
+
+/* About Content Layout */
+.about-content {
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+/* Page Title (centered above) */
+.about-title {
+    font-family: var(--font-logo);
+    font-size: 3rem;
+    color: #333333;
+    margin-bottom: 30px;
+}
+
+/* The Grid (Image and Text side-by-side) */
+.about-grid {
+    display: grid;
+    grid-template-columns: 1fr 1.5fr; /* Text area is 1.5x wider than image area */
+    gap: 40px;
+    width: 100%;
+    align-items: start; /* Align content to the top of the grid */
+}
+
+/* Game Image Box - The tall box with the 'X' from your sketch */
+.game-image-box {
+    width: 82%;
+    aspect-ratio: 2/3; /* Keeps the tall rectangular shape from image 3 */
+    background: #dfe6e9; /* Light gray background */
+    border: 4px solid #2d3436;
+    border-radius: 20px;
+    overflow: hidden; /* Clips the image to the rounded corners */
+    box-shadow: 0 10px 0px rgba(0,0,0,0.05); /* Slight shadow */
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* Styling for the image loaded from your device */
+.backend-image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Ensures image fills the box without distorting or squishing */
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+
+/* Fallback 'X' if the image doesn't load */
+.game-image-box::before {
+    content: 'X';
+    font-size: 8rem;
+    font-weight: 200;
+    color: rgba(0,0,0,0.15);
+    z-index: 1; /* Sits behind the image, but in front of the gray bg */
+}
+
+/* Text Description Styling */
+.game-description p {
+    font-size: 1.1rem;
+    line-height: 1.7; /* Adds space between lines for readability */
+    margin-bottom: 20px;
+    color: #444444;
+}
+
+.game-description strong { color: #ff9f43; } /* Primary orange color */
+
+/* Dropdown */
+.dropdown { position: relative; }
+.drop-btn { background: #f1f2f6; color: #000; border: none; padding: 10px 20px; border-radius: 10px;}
+.dropdown-content {
+    display: none;
+    position: absolute;
+    background: white;
+    border: 3px solid #2d3436;
+    border-radius: 10px;
+    width: 140px;
+    right: 0;
+    top: 100%;
+    margin-top: 5px;
+    z-index: 10;
+}
+.dropdown-content a {
+    display: block;
+    padding: 10px;
+    text-decoration: none;
+    color: black;
+    font-weight: bold;
+}
+.dropdown-content a:hover { background: #eee; }
+.dropdown:hover .dropdown-content { display: block; }

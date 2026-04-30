@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hitman Master - About</title>
+    <link rel="stylesheet" href="about.css">
+    <link rel="stylesheet" href="shared.css">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700&family=Quicksand:wght@500;700&display=swap" rel="stylesheet">
+    <script src="app.js" defer></script>
+</head>
+<body data-page="about">
+
+    <div class="menu-board about-page">
+        <header class="top-nav">
+            <a href="index.html" class="no-underline">
+                <button class="nav-btn about-back" type="button" data-i18n="back">Back</button>
+            </a>
+            
+            <div class="right-controls">
+                <div class="dropdown">
+                    <button class="nav-btn drop-btn" type="button">Language ▾</button>
+                    <div class="dropdown-content">
+                        <a href="#" data-lang="en-us">English (US)</a>
+                        <a href="#" data-lang="de">German</a>
+                        <a href="#" data-lang="fr">French</a>
+                        <a href="#" data-lang="es">Spain</a>
+                    </div>
+                </div>
+                <button class="hidden-settings" type="button" title="Settings" data-settings-trigger>⚙️</button>
+            </div>
+        </header>
+
+        <main class="about-content">
+            <div class="logo-area">
+                <h1 class="about-title" data-i18n="aboutTitle">About Hitman Master</h1>
+            </div>
+
+            <section class="about-grid">
+                <div class="game-image-box">
+                    <img src="About.jpg" alt="Game Concept Art" class="backend-image" onerror="this.style.display='none'">
+                </div>
+
+                <article class="game-description">
+                    <p>Welcome to <strong>Hitman Master</strong>, the ultimate test of stealth, strategy, and precision. Assume the role of Agent 77, an elite operative tasked with navigating complex environments and completing impossible objectives.</p>
+                    <p>Travel from high-security bases to bustling city streets, using only your wits, an arsenal of gadgets, and flawless execution to remain undetected. Every decision matters. Analyze your target, blend into the shadows, and strike when the moment is perfect.</p>
+                    <p>Whether you choose to disappear like a ghost or execute a tactical assault, the choices are yours. Mastering the art of elimination is a fine skill. Prepare yourself, Agent. Your mission begins now.</p>
+                </article>
+            </section>
+        </main>
+    </div>
+
+</body>
+</html>

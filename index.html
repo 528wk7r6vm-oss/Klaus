@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hitman Master | Menu</title>
+    <link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="index.css">
+    <link rel="stylesheet" href="shared.css">
+    <script src="app.js" defer></script>
+</head>
+<body data-page="home">
+
+    <div class="main-card">
+        <header class="top-nav">
+            <a href="about.html" class="no-underline">
+                <button class="nav-btn about" type="button" data-i18n="aboutGame">About Game</button>
+            </a>
+            <div class="combo-container">
+                <select class="language-combo" aria-label="Language">
+                    <option value="en-us">English (US)</option>
+                    <option value="en-uk">English (UK)</option>
+                    <option value="de">German</option>
+                    <option value="fr">French</option>
+                    <option value="es">Spain</option>
+                </select>
+            </div>
+
+            <button class="hidden-trigger" type="button" title="Settings" data-settings-trigger data-i18n="settings">Setting⚙️</button>
+        </header>
+
+        <main class="content">
+            <div class="logo-box">
+                <h1 class="game-title">Hitman Master</h1>
+            </div>
+
+            <div class="action-stack">
+                <button class="menu-btn start-btn" type="button" onclick="location.href='mode.html'" data-i18n="start">Start</button>
+                <button class="menu-btn exit-btn" type="button" data-i18n="exitGame">Exit Game</button>
+            </div>
+        </main>
+    </div>
+
+</body>
+</html>

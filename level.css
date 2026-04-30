@@ -1,0 +1,156 @@
+/* Color Palette Additions */
+:root {
+    --bg-level: #81ecec;      /* Bright Teal */
+    --lvl-btn-bg: #ffeaa7;   /* Soft Yellow */
+    --lvl-btn-hover: #fab1a0; /* Soft Orange */
+}
+
+/* Page Specific Background Override */
+body:has(.level-page) {
+    background-color: var(--bg-level);
+}
+
+.level-content {
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+/* Level Title Box */
+.level-title-box {
+    border: 4px solid #bacdd2;
+    border-radius: 12px;
+    padding: 5px 40px;
+    margin-bottom: 30px;
+    background: rgb(138, 123, 230);
+}
+
+.level-title-box h2 {
+    font-size: 2rem;
+    letter-spacing: 4px;
+    color: #ffffff;
+}
+
+/* Grid Layout (5 columns, 4 rows) */
+.level-grid {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    grid-template-rows: repeat(4, 1fr);
+    gap: 15px;
+    width: 100%;
+    max-width: 500px;
+}
+
+/* Individual Level Buttons */
+.lvl-btn {
+    aspect-ratio: 1 / 1; /* Makes them perfect squares */
+    background-color: var(--lvl-btn-bg);
+    border: 3px solid #648b96;
+    border-radius: 12px;
+    font-size: 1.5rem;
+    font-weight: 700;
+    font-family: var(--font);
+    cursor: pointer;
+    box-shadow: 0 4px 0 #869da3;
+    transition: all 0.1s;
+}
+
+.lvl-btn:hover {
+    background-color: var(--lvl-btn-hover);
+    transform: translateY(-2px);
+    box-shadow: 0 6px 0 #2d3436;
+}
+
+.lvl-btn:active {
+    transform: translateY(3px);
+    box-shadow: 0 1px 0 #2d3436;
+}
+
+/* Footer Alignment */
+.footer-nav {
+    display: flex;
+    justify-content: flex-start;
+    padding-top: 20px;
+}
+.back-btn {
+    background: #f1f2f6;
+    border: 3px solid #2d3436;
+    padding: 10px 20px;
+    border-radius: 15px;
+    font-weight: 700;
+    cursor: pointer;
+    font-family: var(--font);
+}
+/* Requested fix: keep all level buttons inside the bordered board */
+body[data-page="level"] {
+    min-height: 100svh;
+    overflow: hidden;
+}
+
+body[data-page="level"] .level-page {
+    height: min(92svh, 820px);
+    max-height: calc(100svh - 28px);
+    overflow: hidden;
+}
+
+body[data-page="level"] .level-content {
+    min-height: 0;
+    justify-content: flex-start;
+    padding: clamp(8px, 2vh, 18px) 0 10px;
+}
+
+body[data-page="level"] .level-title-box {
+    margin-bottom: clamp(14px, 3vh, 28px);
+}
+
+body[data-page="level"] .level-grid {
+    width: min(100%, 600px);
+    max-width: min(600px, calc(100vw - 90px));
+    gap: clamp(8px, 1.8vh, 15px);
+}
+
+body[data-page="level"] .lvl-btn {
+    min-width: 0;
+    font-size: clamp(1.05rem, 3vh, 1.5rem);
+}
+
+body[data-page="level"] .footer-nav {
+    flex: 0 0 auto;
+    padding-top: clamp(8px, 2vh, 18px);
+}
+
+@media (max-height: 720px) {
+    body[data-page="level"] .level-page {
+        padding: 16px 22px;
+    }
+
+    body[data-page="level"] .level-title-box h2 {
+        font-size: 1.55rem;
+    }
+
+    body[data-page="level"] .level-grid {
+        width: min(78vh, 540px, calc(100vw - 90px));
+        gap: 8px;
+    }
+}
+
+@media (max-width: 560px) {
+    body[data-page="level"] {
+        overflow: auto;
+        padding: 10px;
+    }
+
+    body[data-page="level"] .level-page {
+        height: auto;
+        min-height: calc(100svh - 20px);
+        max-height: none;
+    }
+
+    body[data-page="level"] .level-grid {
+        max-width: 100%;
+        grid-template-columns: repeat(4, 1fr);
+        grid-template-rows: auto;
+    }
+}

@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hitman Master - Level Select</title>
+    <link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="mode.css">
+    <link rel="stylesheet" href="shared.css">
+    <script src="app.js" defer></script>
+</head>
+<body data-page="mode">
+
+    <div class="menu-card">
+        <header class="top-nav">
+            <button class="back-btn" type="button" onclick="location.href='index.html'" data-i18n="back">Back</button>
+            <button class="hidden-settings" type="button" title="Settings" data-settings-trigger>⚙️</button>
+        </header>
+
+        <main class="grid-container">
+            <div class="card-item" data-mode-card="normal">
+                <div class="image-container">
+                    <img src="Easymode1.png" alt="Normal Level" class="level-img">
+                </div>
+                <button class="label-btn yellow" type="button" data-mode="normal" data-i18n="normalMode">Normal</button>
+            </div>
+
+            <div class="card-item" data-mode-card="hard">
+                <div class="image-container">
+                    <img src="Hardmode1.png" alt="Hard Level" class="level-img">
+                </div>
+                <button class="label-btn orange" type="button" data-mode="hard" data-i18n="hardMode">Hard</button>
+            </div>
+
+            <div class="card-item" data-mode-card="impossible">
+                <div class="image-container">
+                    <img src="Impossiblemode1.png" alt="Impossible Level" class="level-img">
+                </div>
+                <button class="label-btn red" type="button" data-mode="impossible" data-i18n="impossibleMode">Impossible</button>
+            </div>
+        </main>
+    </div>
+
+</body>
+</html>
